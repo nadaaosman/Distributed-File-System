@@ -1,0 +1,45 @@
+1-HandleUploadFile
+
+2-HandleDownloadFile
+
+3-replicate
+
+4-NotifyUploaded --->when notification came from datanode as replication done handle 
+modifcation of lockup table , ids sent in the req for the datanodes
+
+5-uploadfile --> modify the return to return the path for the replication
+
+6-replicationScheduler for every 10 sec master execute it
+
+7-updatelive for 1 sec in the master where datanode exececute it every sec
+
+
+replicate DONE
+uploadfile  DONE
+NotifyUploaded  DONE
+
+replicateschedualer  DONE
+
+updatelive
+HandleUploadFile  DONE
+HandleDownloadFile  DONE
+downloadfile  DONE
+
+note:
+
+*in client handle where in handledownlooadrequest we return ips and ports so the client
+must choose on machine to request it to download the file so handle to pick only one from the data returned  DONE
+
+*check the multithreading concurrency in code master , datanode
+
+*test
+
+*keepalive and updatealive
+
+*n generate the two files of go  DONE
+
+*errors  DONE
+
+
+
+*ask for the avliable ports how to know them or how to deal with that
